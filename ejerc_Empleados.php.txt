@@ -1,0 +1,38 @@
+$Nom;
+$HT;
+$VH;
+$VL;
+$E;
+$VT;
+$DD;
+$D = 2;
+
+echo "Cuantos trabajadores desea consultar: ";
+$E = (int)readline(); // Cambié "Real(input())" a "(int)readline()" para obtener una entrada numérica.
+
+for ($i = 0; $i < $E; $i++) {
+    echo "Digite el nombre del empleado: ";
+    $Nom = readline(); // Cambié "input()" a "readline()" para obtener una entrada de texto.
+    
+    echo "Digite las horas trabajadas: ";
+    $HT = (float)readline(); // Cambié "Real(input())" a "(float)readline()" para obtener una entrada numérica.
+    
+    echo "Digite el valor de la hora: ";
+    $VH = (float)readline(); // Cambié "Real(input())" a "(float)readline()" para obtener una entrada numérica.
+    
+    $VL = $HT * $VH;
+    $DD = $VL * $D / 100;
+    $VT = $VL - $DD;
+
+    echo "El valor total a pagar es: " . $VT . " y el deducible para los niños más necesitados es " . $DD . PHP_EOL; // Corregí la concatenación de cadenas.
+}
+?>
+
+
+
+
+
+
+
+
+ 

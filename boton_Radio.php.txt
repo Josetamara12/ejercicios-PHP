@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora PHP</h1>
+    <form method="post" action="">
+        <input type="text" name="numero1" placeholder="Número 1" required>
+        <br><br>
+        <input type="text" name="numero2" placeholder="Número 2" required>
+        <br><br>
+        <label>Seleccione una operación:</label>
+        <br>
+        <input type="radio" name="operacion" value="sumar" required> Sumar (+)
+        <input type="radio" name="operacion" value="restar"> Restar (-)
+        <input type="radio" name="operacion" value="multiplicar"> Multiplicar (*)
+        <input type="radio" name="operacion" value="dividir"> Dividir (/)
+        <br><br>
+        <input type="submit" name="calcular" value="Calcular">
+    </form>
+
+    <?php
+    if (isset($_POST['calcular'])) {
+        $numero1 = $_POST['numero1'];
+        $numero2 = $_POST['numero2'];
+        $operacion = $_POST['operacion'];
+
+        switch ($operacion) {
+            case 'sumar':
+                $resultado = $numero1 + $numero2;
+                break;
+            case 'restar':
+                $resultado = $numero1 - $numero2;
+                break;
+            case 'multiplicar':
+                $resultado = $numero1 * $numero2;
+                break;
+            case 'dividir':
+                if ($numero2 != 0) {
+                    $resultado = $numero1 / $numero2;
+                } else {
+                    $resultado = "Error: división por cero.";
+                }
+                break;
+            default:
+                $resultado = "Seleccione una operación válida.";
+                break;
+        }
+
+        echo "<br><strong>Resultado:</strong> $resultado";
+    }
+    ?>
+</body>
+</html>

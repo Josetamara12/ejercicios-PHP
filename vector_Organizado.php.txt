@@ -1,0 +1,24 @@
+<?php
+//ordenar arreglo
+$arreglo = array(1, 2, 3, 5, 7, 6 , 8);
+for($i = 0; $i < count($arreglo)-1; $i++){
+  if($arreglo[$i] > $arreglo[$i+1]){
+    $aux = $arreglo[$i+1];
+    $arreglo[$i+1] = $arreglo[$i];
+    $arreglo[$i] = $aux;
+  } 
+}
+print_r($arreglo);
+
+for($j = 0; $j < count($arreglo)-1; $j++){
+  for($i = 0; $i < count($arreglo)-1; $i++){
+    if($arreglo[$i+1] > $arreglo[$i]){
+      $aux = $arreglo[$i+1];
+      $arreglo[$i+1] = $arreglo[$i];
+      $arreglo[$i] = $aux;
+    } 
+  }
+}
+for($i = 0; $i < count($arreglo); $i++){
+  echo $arreglo[$i];
+}

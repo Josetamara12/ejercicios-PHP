@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reloj Digital</title>
+    <script type="text/javascript">
+        function actualizarReloj() {
+            // Obtener la fecha y hora actual en el servidor
+            <?php
+            date_default_timezone_set('tu_zona_horaria'); // Reemplaza 'tu_zona_horaria' con la zona horaria deseada
+            $hora_actual = date('H:i:s');
+            ?>
+            
+            // Mostrar la hora actual en el elemento con id "reloj"
+            document.getElementById('reloj').innerHTML = '<?php echo $hora_actual; ?>';
+        }
+        
+        // Actualizar el reloj cada segundo
+        setInterval(actualizarReloj, 1000);
+    </script>
+</head>
+<body>
+    <h1>Reloj Digital</h1>
+    <div id="reloj"></div>
+</body>
+</html>

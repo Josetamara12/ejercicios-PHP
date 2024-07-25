@@ -1,0 +1,24 @@
+<?php
+function esPrimo($numero) {
+    if ($numero <= 1) {
+        return false; // Los números menores o iguales a 1 no son primos
+    }
+    
+    // Comprobar si el número es divisible por algún número desde 2 hasta la mitad de $numero
+    for ($i = 2; $i <= $numero / 2; $i++) {
+        if ($numero % $i === 0) {
+            return false; // El número es divisible por otro número, no es primo
+        }
+    }
+    
+    return true; // Si no se encontraron divisores, el número es primo
+}
+
+$numero = 8; // Cambia este número por el que desees verificar
+
+if (esPrimo($numero)) {
+    echo "$numero es un número primo.";
+} else {
+    echo "$numero no es un número primo.";
+}
+?>

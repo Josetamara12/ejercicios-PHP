@@ -1,0 +1,32 @@
+<?php
+// Función 1: Sumar dos números
+function suma($a, $b) {
+    $resultado = $a + $b;
+    return $resultado;
+}
+
+// Función 2: Calcular el área de un círculo
+function calcularAreaCirculo($radio) {
+    $area = pi() * pow($radio, 2);
+    return $area;
+}
+
+// Función 3: Imprimir un saludo personalizado
+function saludar($nombre) {
+    echo "¡Hola, $nombre!";
+}
+
+// Llamando a las funciones y mostrando resultados
+$numero1 = 10;
+$numero2 = 5;
+
+$resultadoSuma = suma($numero1, $numero2);
+echo "La suma de $numero1 y $numero2 es: $resultadoSuma<br>";
+
+$radioCirculo = 3;
+$areaCirculo = calcularAreaCirculo($radioCirculo);
+echo "El área de un círculo con radio $radioCirculo es: $areaCirculo<br>";
+
+$nombreUsuario = "Juan";
+saludar($nombreUsuario);
+?>
